@@ -1,1 +1,1 @@
-# minishell
+# minishell bootstrap and program
