@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "my.h": "c",
+        "include": "c",
+        "mysh.h": "c"
+    }
+}

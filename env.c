@@ -9,19 +9,18 @@
  #include "./include/include"
  #include "./include/mysh.h"
 
-int	tablen(char **tab)
+int	tab_len(char **tab)
 {
-  int i;
+    int i;
 
-  i = -1;
-  while (tab[++i] != NULL);
-  return (i);
+    for (i = 0; tab[i] != NULL; i++);
+    return (i);
 }
 
 char **copy_envp(char **old_env) {
 
     int i;
-    char **new_env = malloc(sizeof(char*) * (tablen(old_env) + 1));
+    char **new_env = malloc(sizeof(char*) * (tab_len(old_env) + 1));
 
     if (new_env == NULL)
         return (NULL);
@@ -30,6 +29,7 @@ char **copy_envp(char **old_env) {
         if (new_env[i] == NULL)
             return (NULL);
         my_strcpy(new_env[i], old_env[i]);
+        // printf("%s\n", new_env[i]);
     }
     new_env[i] = NULL;
     return (new_env);
