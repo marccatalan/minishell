@@ -17,5 +17,6 @@ int main(int argc, char **argv, char **envp)
     if (main_error_handling(argc, argv) == 84)
         return 84;
     my_env = environment(envp);
-    prompt(my_env);
+    //prompt(my_env);
+    return 0;
 }

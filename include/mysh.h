@@ -15,4 +15,7 @@ typedef struct	struct_my_env
   char **path;
 } struct_my_env;
 
+int main_error_handling(int argc, char **argv);
+struct_my_env* environment(char **envp);
+
 #endif
