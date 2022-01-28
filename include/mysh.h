@@ -8,7 +8,6 @@
 # include <signal.h>
 # include <stdio.h>
 # include <sys/stat.h>
-#include <string.h>
 
 typedef struct	struct_my_env
 {

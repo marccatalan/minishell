@@ -11,32 +11,23 @@
 
 int flags (struct_my_env *senv, char *str)
 {
-    printf("%s", str);
-    // switch(str)
-    // {
-    //     case "cd":
-    //         printf("%s", "es cd");
-    //         break;
-    //     case "env":
-    //         printf("%s", "es env");
-    //         break;
-    //     case "setenv":
-    //         printf("%s", "es setenv");
-    //         break;
-    //     case "unsetenv":
-    //         printf("%s", "es unsetenv");
-    //         break;
-    // }
-
-    if (strcmp(str, "cd") == 0) 
+    if (my_strcmp(str, "cd") == 0) 
         printf("%s", "es cd");
+        // name_function(senv, str);
+    else if (my_strcmp(str, "env") == 0)
+        printf("%s","es env");
+        // name_function(senv, str);
+    else if (my_strcmp(str, "setenv") == 0)
+        printf("%s", "es setenv");
+        // name_function(senv, str);
+    else if (my_strcmp(str, "unsetenv") == 0)
+        printf("%s", "es unsetenv");
+        // name_function(senv, str);
     else
-        printf("%s", "no es cd");
-        
-    // cd
-    // env no more arguments
-    // setenv
-    // unsetenv can be *
+        my_putstr("command not found:");
+        // my_putstr(str);
+
+    return 0;
 }
 
 int prompt(struct_my_env *senv)
@@ -55,6 +46,8 @@ int prompt(struct_my_env *senv)
     }
     characters = getline(&str, &bufsize,stdin);
     // printf("%zu characters were read.\n",characters);
-    printf("%s",str);
+    // printf("%s",str);
     flags(senv, str);
+
+    return 0;
 }
