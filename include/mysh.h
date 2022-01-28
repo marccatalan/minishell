@@ -11,7 +11,7 @@
 
 typedef struct	struct_my_env
 {
-  char **env;
+  char **envp;
   char **path;
 } struct_my_env;
 
