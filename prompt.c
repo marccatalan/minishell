@@ -14,8 +14,13 @@ int flags (struct_my_env *senv, char *str)
     if (my_strcmp(str, "cd") == 0) 
         printf("%s", "es cd");
         // name_function(senv, str);
-    else if (my_strcmp(str, "env") == 0)
-        printf("%s","es env");
+    else if (my_strcmp(str, "env") == 0) {
+        for (char **env = senv->envp; *env != 0; env++) {
+            char *thisEnv = *env;
+            printf("%s\n", thisEnv);
+        }
+    }
+        //printf("%s","es env");
         // name_function(senv, str);
     else if (my_strcmp(str, "setenv") == 0)
         printf("%s", "es setenv");
@@ -39,8 +44,7 @@ int prompt(struct_my_env *senv)
     printf("%s","$>");
 
     str = (char *)malloc(bufsize * sizeof(char));
-    if (str == NULL)
-    {
+    if (str == NULL) {
         perror("Unable to allocate buffer");
         exit(1);
     }

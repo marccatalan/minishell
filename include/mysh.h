@@ -17,5 +17,11 @@ typedef struct	struct_my_env
 
 int main_error_handling(int argc, char **argv);
 struct_my_env* environment(char **envp);
+char	**str_to_tab(char *str, char sep);
+int	tab_len(char **tab);
+void env_output(void);
+void tabprint(char **tab);
+int	cmd_exec(char **cmd, char **env);
+int	my_strprefix(char *s1, char *s2, int n);
 
 #endif

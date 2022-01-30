@@ -9,16 +9,7 @@
  #include "./include/include"
  #include "./include/mysh.h"
 
-int	env_len(char **tab)
-{
-    int i;
-
-    for (i = 0; tab[i] != NULL; i++);
-    return (i);
-}
-
-int	my_strprefix(char *s1, char *s2, int n)
-{
+int	my_strprefix(char *s1, char *s2, int n) {
     int i;
 
     for (i = 0; s1[i] && s2[i] && s1[i] == s2[i] && (i < n || n < 0); i++) {
@@ -27,8 +18,7 @@ int	my_strprefix(char *s1, char *s2, int n)
     return (i);
 }
 
-int	find_var(char **env, char *var)
-{
+int	find_var(char **env, char *var) {
     int i = 0;
 
     while (env[i++] != NULL) {
@@ -44,13 +34,23 @@ char **get_path(char **env) {
     char **tmp;
 
     id = find_var(env, "PATH=");
-    //printf("%d\n", id);
+        if (id == -1) {
+            tmp = malloc(sizeof(char*) * 2);
+            tmp[0] = malloc(sizeof(char) * 1);
+            tmp[0] = "";
+            tmp[1] = NULL;
+            return (tmp);
+        }
+    tmp = str_to_tab(env[id], '=');
+    path = str_to_tab(tmp[1], ':');
+    free(tmp);
+    return (path);
 }
 
 char **copy_envp(char **old_env) {
 
     int i;
-    char **new_env = malloc(sizeof(char*) * (env_len(old_env) + 1));
+    char **new_env = malloc(sizeof(char*) * (tab_len(old_env) + 1));
 
     if (new_env == NULL)
         return (NULL);
