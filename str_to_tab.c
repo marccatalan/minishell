@@ -13,7 +13,7 @@ void tabprint(char **tab) {
     int i = 0;
 
     while (tab[i++] != NULL) {
-        printf("Line : %s\n", tab[i]);
+        my_printf("Line : %s\n", tab[i]);
     }
 }
 

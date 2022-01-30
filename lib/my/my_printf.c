@@ -4,8 +4,7 @@
 ** File description:
 ** prints whatever you want
 */
-
-#include "my_printf.h"
+#include "my.h"
 #include <stdarg.h>
 
 void	print_init(int (*printmy[128])(va_list *, int, char))

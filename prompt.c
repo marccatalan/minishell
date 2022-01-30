@@ -17,7 +17,7 @@ int flags (struct_my_env *senv, char *str)
     else if (my_strcmp(str, "env") == 0) {
         for (char **env = senv->envp; *env != 0; env++) {
             char *thisEnv = *env;
-            my_printf(thisEnv);
+            my_printf("%s\n", thisEnv);
         }
     }
         //my_printf("%s","es env");
@@ -41,7 +41,7 @@ int prompt(struct_my_env *senv)
     size_t bufsize = 32;
     size_t characters;
 
-    printf("%s","$>");
+    my_printf("%s","$>");
 
     str = (char *)malloc(bufsize * sizeof(char));
     if (str == NULL) {
@@ -49,8 +49,8 @@ int prompt(struct_my_env *senv)
         exit(1);
     }
     characters = getline(&str, &bufsize,stdin);
-    // printf("%zu characters were read.\n",characters);
-    // printf("%s",str);
+    // my_printf("%zu characters were read.\n",characters);
+    // my_printf("%s",str);
     flags(senv, str);
 
     return 0;

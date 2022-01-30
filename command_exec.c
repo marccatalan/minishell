@@ -15,14 +15,14 @@ int	cmd_exec(char **cmd, char **env) {
 
     pid = fork();
     if (pid < 0)
-        printf("Forking failed !\n");
+        my_printf("Forking failed !\n");
     if (pid != 0) {
         waitpid(pid, &status, 0);
         //check_status(status);
         return (status);
     } else {
         execve(cmd[0], cmd, env);
-        printf("%s: Command not found.\n", cmd[0]);
+        my_printf("%s: Command not found.\n", cmd[0]);
     }
     return (84);
 }

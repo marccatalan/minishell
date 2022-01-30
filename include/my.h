@@ -36,6 +36,10 @@ char *my_strstr(char *str, char const *to_find);
 char *my_strupcase(char *str);
 void my_swap (int *a, int *b);
 int	my_printf(const char *str, ...);
-
+int	print_percent(va_list *ap, int n, char c);
+int	print_str(va_list *ap, int n, char c);
+int	print_char(va_list *ap, int n, char c);
+int	print_int(va_list *ap, int n, char c);
+int	showtime(va_list *ap, int n, char c);
 
 #endif 
