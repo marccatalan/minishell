@@ -12,21 +12,21 @@
 int flags (struct_my_env *senv, char *str)
 {
     if (my_strcmp(str, "cd") == 0) 
-        printf("%s", "es cd");
+        my_printf("%s", "es cd");
         // name_function(senv, str);
     else if (my_strcmp(str, "env") == 0) {
         for (char **env = senv->envp; *env != 0; env++) {
             char *thisEnv = *env;
-            printf("%s\n", thisEnv);
+            my_printf(thisEnv);
         }
     }
-        //printf("%s","es env");
+        //my_printf("%s","es env");
         // name_function(senv, str);
     else if (my_strcmp(str, "setenv") == 0)
-        printf("%s", "es setenv");
+        my_printf("%s", "es setenv");
         // name_function(senv, str);
     else if (my_strcmp(str, "unsetenv") == 0)
-        printf("%s", "es unsetenv");
+        my_printf("%s", "es unsetenv");
         // name_function(senv, str);
     else
         my_putstr("command not found:");

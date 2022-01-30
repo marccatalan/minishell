@@ -7,7 +7,6 @@
 
 #ifndef MYLIST_H
 #define MYLIST_H_
-my
 #include "my.h"
 #include <stdlib.h>
 
