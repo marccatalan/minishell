@@ -5,7 +5,7 @@
 ** my_printf functions
 */
 
-#include <stdarg.h>
+#include "my_printf.h"
 #include "my.h"
 
 int	print_char(va_list *ap, int n, char c)
