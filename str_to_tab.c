@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** print example
+** str_to_tab.c
 ** File description:
-** example
+** converts a string into a matrix of
 */
 
 #include "./lib/my/my.h"
@@ -10,6 +10,7 @@
 #include "./include/mysh.h"
 
 void tabprint(char **tab) {
+
     int i = 0;
 
     while (tab[i++] != NULL) {
@@ -18,6 +19,7 @@ void tabprint(char **tab) {
 }
 
 int	tab_len(char **tab) {
+
     int i;
 
     for (i = 0; tab[i] != NULL; i++);
@@ -25,6 +27,7 @@ int	tab_len(char **tab) {
 }
 
 int	count_sep(char *str, char sep) {
+
     int ret = 0;
     int i = 0;
 
@@ -36,6 +39,7 @@ int	count_sep(char *str, char sep) {
 }
 
 int	length_of_str(char *str, int i, char sep) {
+
     int ret = 0;
 
     while (i < my_strlen(str) && str[i] != sep) {
@@ -46,6 +50,7 @@ int	length_of_str(char *str, int i, char sep) {
 }
 
 char **str_to_tab(char *str, char sep) {
+
     int i = 0;
     int j = 0;
     int s_len;
@@ -60,9 +65,10 @@ char **str_to_tab(char *str, char sep) {
             j++;
             i += s_len;
         }
-        else
-        i++;
+        else{
+            i++;
         }
+    }
     params[j] = NULL;
     return (params);
 }

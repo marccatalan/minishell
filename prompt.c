@@ -12,21 +12,21 @@
 int flags (struct_my_env *senv, char *str)
 {
     if (my_strcmp(str, "cd") == 0) 
-        my_printf("%s", "es cd");
+        printf("%s", "es cd");
         // name_function(senv, str);
     else if (my_strcmp(str, "env") == 0) {
         for (char **env = senv->envp; *env != 0; env++) {
             char *thisEnv = *env;
-            my_printf("%s\n", thisEnv);
+            printf("%s\n", thisEnv);
         }
     }
-        //my_printf("%s","es env");
+        //printf("%s","es env");
         // name_function(senv, str);
     else if (my_strcmp(str, "setenv") == 0)
-        my_printf("%s", "es setenv");
+        printf("%s", "es setenv");
         // name_function(senv, str);
     else if (my_strcmp(str, "unsetenv") == 0)
-        my_printf("%s", "es unsetenv");
+        printf("%s", "es unsetenv");
         // name_function(senv, str);
     else
         my_putstr("command not found:");
@@ -41,7 +41,7 @@ int prompt(struct_my_env *senv)
     size_t bufsize = 32;
     size_t characters;
 
-    my_printf("%s","$>");
+    printf("%s","$>");
 
     str = (char *)malloc(bufsize * sizeof(char));
     if (str == NULL) {
@@ -49,8 +49,8 @@ int prompt(struct_my_env *senv)
         exit(1);
     }
     characters = getline(&str, &bufsize,stdin);
-    // my_printf("%zu characters were read.\n",characters);
-    // my_printf("%s",str);
+    // printf("%zu characters were read.\n",characters);
+    // printf("%s",str);
     flags(senv, str);
 
     return 0;

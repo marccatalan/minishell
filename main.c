@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** print example
+** main.c
 ** File description:
-** example
+** main
 */
 
  #include "./lib/my/my.h"
