@@ -9,8 +9,7 @@ OBJ = $(SRC:.c=.o)
 
 LIB = -L./lib/my -lmy
 
-
-SRC	= 	$(wildcard *.c)
+SRC	= 	$(wildcard *.c) $(wildcard */*.c)
 
 CFLAGS = -I./include
 

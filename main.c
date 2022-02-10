@@ -1,24 +1,16 @@
 /*
-** EPITECH PROJECT, 2021
+** EPITECH PROJECT, 2022
 ** main.c
 ** File description:
-** main
+** main with structure
 */
 
- #include "./lib/my/my.h"
- #include "./include/include"
- #include "./include/mysh.h"
- #include <stdio.h>
-
-void prompt(struct_my_env *senv);
+#include "./lib/my/my.h"
+#include "./include/mysh.h"
 
 int main(int argc, char **argv, char **envp)
 {
-    struct_my_env *my_env;
-
-    if (main_error_handling(argc, argv) == 84)
-      return 84;
-    my_env = environment(envp);
-    prompt(my_env);
-    return 0;
+    if (argc > 2 || find_line("PATH=", envp) == -1)
+        return 84;
+    return minishell(envp);
 }

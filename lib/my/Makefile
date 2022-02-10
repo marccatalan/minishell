@@ -1,24 +1,24 @@
 ##
 ## EPITECH PROJECT, 2021
-## d10
+## Makefile do_op
 ## File description:
-## x
+## makefile
+##
 
+OBJ = $(SRC:.c=.o)
 
-SRC	=	$(wildcard *.c)
+LIB = -L./lib/my -lmy
 
-OBJ	= 	$(SRC:.c=.o) ##Quitar los .c
+SRC	= 	$(wildcard *.c)
 
-NAME	=	libmy.a  ##Nombre archivo
+CFLAGS = -I./include
+
+NAME = libmy.a
 
 $(NAME):	$(OBJ)
 		ar rc   $(NAME) $(OBJ)
 		cp libmy.a ../
 		cp my.h	../../include
-
-all:	$(NAME)
-
-copy:   $(COPY)
 
 clean:
 	rm -f $(OBJ)
@@ -27,3 +27,4 @@ fclean: clean
 	rm -f $(NAME)
 
 re:	fclean all
+	make clean
