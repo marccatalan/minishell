@@ -28,5 +28,5 @@ fclean: clean
 	rm -f $(NAME)
 	cd ./lib/my ; $(MAKE) -f Makefile fclean
 
-re:	fclean all
+re:	clean all
 	make clean

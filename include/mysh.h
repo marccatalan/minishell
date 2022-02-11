@@ -9,9 +9,6 @@
 # include <stdio.h>
 # include <sys/stat.h>
 #include <stdbool.h>
-#include <stdarg.h>
-#include <string.h>
-#include <errno.h>
 
 typedef struct shell
 {
@@ -31,14 +28,7 @@ int commands(my_shell *shell);
 int check_spaces(char *cmd);
 void my_exit(int status);
 int exec_slash(char **cmd, my_shell *shell);
-bool check_slash(char *cmd);
-int exec_cmd(my_shell *shell, char *cmd);
-bool check_cmd(char *cmd);
-int do_cmd(char **cmd, my_shell *shell);
-int prepare_command(my_shell *shell, char **parsed_cmd);
-int exec_command(char *cmd, char **buffer, char **env);
-int exec_error(char *cmd);
-int get_segfault(int segfault);
-int command_not_found(char *cmd);
+int strncmp(char *s1, char *s2, int n);
+int print_env(char **str, my_shell *shell);
 
 #endif

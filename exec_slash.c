@@ -5,10 +5,10 @@
 ** main with structure
 */
 
-#include "../lib/my/my.h"
-#include "../include/mysh.h"
+#include "./lib/my/my.h"
+#include "./include/mysh.h"
 
-bool check_slash(char *cmd)
+/*bool check_local(char *cmd)
 {
     if (my_strncmp(cmd, "./", 2) == 0)
         return true;
@@ -26,4 +26,4 @@ int exec_slash(char **cmd, my_shell *shell)
         return exec_command(cmd[0], cmd, shell->envp);
     }
     return 0;
-}
+}*/

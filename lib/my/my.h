@@ -24,6 +24,7 @@ char *my_strcapitalize(char *str);
 char *my_strcat(char *dest , char const *src);
 char my_strcmp (char const *s1 , char const *s2);
 char * my_strcpy(char * dest, char const * src);
+char *my_strdup(char *src);
 int my_str_isalpha(char const *str);
 int my_str_islower (char const *str);
 int my_str_isnum (char const *str);
